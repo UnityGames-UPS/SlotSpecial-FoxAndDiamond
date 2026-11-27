@@ -1,0 +1,6 @@
+Golden_Fox.png
+size:334,414
+filter:Linear,Linear
+pma:true
+Fox
+bounds:2,2,330,410

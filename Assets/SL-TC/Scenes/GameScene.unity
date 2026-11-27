@@ -4590,7 +4590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87, y: 21}
+  m_AnchoredPosition: {x: 79, y: 191}
   m_SizeDelta: {x: 94.221, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &171277458
@@ -12582,7 +12582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &405409379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13035,8 +13035,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -66}
-  m_SizeDelta: {x: 354.3, y: 214.6335}
+  m_AnchoredPosition: {x: -9, y: -5}
+  m_SizeDelta: {x: 324, y: 214.6335}
   m_Pivot: {x: 0.50954056, y: 0.4670935}
 --- !u!114 &414233840
 MonoBehaviour:
@@ -13058,7 +13058,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: 15e4382fa11c0474ab1712719b7881f4, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 5bdb7ec14669ac640b8565cb75eb1fc2, type: 2}
   additiveMaterial: {fileID: 2100000, guid: 2e8245019faeb8c43b75f9ca3ac8ee34, type: 2}
   multiplyMaterial: {fileID: 2100000, guid: e74a1f8978a7da348a721508d0d58834, type: 2}
   screenMaterial: {fileID: 2100000, guid: bab24c479f34eec45be6ea8595891569, type: 2}
@@ -13075,7 +13075,7 @@ MonoBehaviour:
   referenceSize: {x: 370.2212, y: 376}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 1
-  layoutScale: 0.9569954
+  layoutScale: 0.87515247
   rectTransformSize: {x: 250, y: 250}
   editReferenceRect: 0
   updateWhenInvisible: 3
@@ -19244,7 +19244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39, y: -104}
+  m_AnchoredPosition: {x: 9, y: 4}
   m_SizeDelta: {x: 628.052, y: 194.704}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574120068
@@ -39579,7 +39579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f521a04de7f494272a617b2719edd271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SocketIOManager
-  testToken: 815e72528cee42c0b0f2b0214e462493
+  testToken: 44091c87e2f043439089a85526ce1417
   gameManager: {fileID: 1206269883}
   uiManager: {fileID: 885496184}
   popupManager: {fileID: 1363796882}
@@ -42489,7 +42489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1334654946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -46125,103 +46125,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotView
   gameManager: {fileID: 1206269883}
   symbolSprites:
-  - {fileID: 21300000, guid: 63fde93ff2cd33f439f7ac7596044649, type: 3}
-  - {fileID: 21300000, guid: d116ae39169975341889a887a5a64c6e, type: 3}
-  - {fileID: 21300000, guid: 4d30d72d14b980640a2614a394d715b9, type: 3}
-  - {fileID: 21300000, guid: f0d6df4337713ba41b3688f7371fbcdf, type: 3}
-  - {fileID: 21300000, guid: 653a65601a56d67428de5a2fbcb0f2f9, type: 3}
-  - {fileID: 21300000, guid: 70ebcbcb065800f4284e19da387c3888, type: 3}
-  - {fileID: 21300000, guid: 7acbc6369463c694f8e4cee3ec3b7702, type: 3}
-  - {fileID: 21300000, guid: fa0f89c499e890f429fb8686386fc365, type: 3}
-  - {fileID: 21300000, guid: 449a7a71a50377b40b2c344a85055d61, type: 3}
-  - {fileID: 21300000, guid: 4e6e89d15d27a1f448f12985c9089671, type: 3}
-  - {fileID: 21300000, guid: 97802dcc1eed5dc4893b78ec47d2273b, type: 3}
-  - {fileID: 21300000, guid: d00cc9e8b5642cd4fbce9fcb7fa42c03, type: 3}
+  - {fileID: 21300000, guid: 067d00216b5896046b2d19f56432f7b7, type: 3}
+  - {fileID: 21300000, guid: 55e029b2e28bdf844be37914fd0d1dbd, type: 3}
+  - {fileID: 21300000, guid: 5e5769865158ff946bc5b86bbfb14f1f, type: 3}
+  - {fileID: 21300000, guid: a22c0489604fe2f45a1e0bbf7ab0f777, type: 3}
+  - {fileID: 21300000, guid: b2b4b3f6ce8fda842ae6fde6cd0e586d, type: 3}
+  - {fileID: 21300000, guid: ffa0b8fd76ce2f74ea91d09f575d3e99, type: 3}
+  - {fileID: 21300000, guid: 336c108c05a53024fa21b43a6724ddab, type: 3}
+  - {fileID: 21300000, guid: 0b0da843409b3194382e75375c0142e0, type: 3}
+  - {fileID: 21300000, guid: 56188b9f4ad3425408a2a65b51781fae, type: 3}
+  - {fileID: 21300000, guid: a745caee3d041614295409c9f94f821b, type: 3}
+  - {fileID: 21300000, guid: 7d9f14fc80ab878468fb3dc5f16e804c, type: 3}
+  - {fileID: 21300000, guid: 6f46f1f691609de4aa00b3454b8e99de, type: 3}
   symbolSkeletons:
-  - {fileID: 11400000, guid: 4ea8af442b6ed5e41b6da93c7ad273ee, type: 2}
-  - {fileID: 11400000, guid: 6426448ded963924eae4144c94c65b1a, type: 2}
-  - {fileID: 11400000, guid: d1b7c8c358e418440809edcc7d2bee6a, type: 2}
-  - {fileID: 11400000, guid: f57eaed81985b8a48b6c38d62ebb58c7, type: 2}
-  - {fileID: 11400000, guid: 3d28c8c6c44379745a53594b2c3dda47, type: 2}
-  - {fileID: 11400000, guid: 042a541674d79c8408b790086db6a7ac, type: 2}
-  - {fileID: 11400000, guid: 2c11029a23157db4f8a31e6b279657d4, type: 2}
-  - {fileID: 11400000, guid: 750693898ca458e42b797954253a296a, type: 2}
-  - {fileID: 11400000, guid: 0da564ab62e33bb4cbd758c75b76ebc5, type: 2}
-  - {fileID: 11400000, guid: 9cb6592b6793e394ba0fcd7e0772acb5, type: 2}
-  - {fileID: 11400000, guid: fa762198c4a4dde4c955f5f5ec342e05, type: 2}
-  - {fileID: 11400000, guid: 8981aafb2a24c334b9c218752db3575e, type: 2}
+  - {fileID: 11400000, guid: 83e3e5d75131d62479a5c75c6567b435, type: 2}
+  - {fileID: 11400000, guid: 2bc1962669e843243adf0651e6941ca1, type: 2}
+  - {fileID: 11400000, guid: cf9f3ab18828e29489f325179a3901cd, type: 2}
+  - {fileID: 11400000, guid: d487b6eb6fe00c54e8fef233dfec930a, type: 2}
+  - {fileID: 11400000, guid: 706a88b03178cbd46998428e39d9098e, type: 2}
+  - {fileID: 11400000, guid: aea8d942544ee4e419c9898b46b095de, type: 2}
+  - {fileID: 11400000, guid: 87afad6c13290f646ac22f5792624b38, type: 2}
+  - {fileID: 11400000, guid: 976a98330bb89d945bad0a7a2a9b4883, type: 2}
+  - {fileID: 11400000, guid: 2513458e908e9594a98d091e9c461f5e, type: 2}
+  - {fileID: 11400000, guid: 244b899f2129b8b41bea4a916f99cde1, type: 2}
+  - {fileID: 11400000, guid: caf9c574f3ed2f24f91db7ed31d73fed, type: 2}
+  - {fileID: 11400000, guid: 7ff003afca11c84429d06593d786c3af, type: 2}
   symbolWinAnims:
   - symbolId: 0
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 1
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 2
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 3
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 4
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 5
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 6
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 7
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 8
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 9
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 10
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   - symbolId: 11
     useSpine: 1
     frames: []
     animationSpeed: 0
-    spineAnimation: animation
+    spineAnimation: Trigger
     spineSkin: 
   reelTransforms:
   - {fileID: 682958188}
@@ -48551,7 +48551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1552467997
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66688,7 +66688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: 78329bd519129564e9a3b119a6ce7131, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: d67fe41ace39c75458c6fcb14bff5393, type: 2}
   additiveMaterial: {fileID: 2100000, guid: 2e8245019faeb8c43b75f9ca3ac8ee34, type: 2}
   multiplyMaterial: {fileID: 2100000, guid: e74a1f8978a7da348a721508d0d58834, type: 2}
   screenMaterial: {fileID: 2100000, guid: bab24c479f34eec45be6ea8595891569, type: 2}
@@ -66705,7 +66705,7 @@ MonoBehaviour:
   referenceSize: {x: 370.2212, y: 376}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 1
-  layoutScale: 0.71740896
+  layoutScale: 0.8165389
   rectTransformSize: {x: 250, y: 250}
   editReferenceRect: 0
   updateWhenInvisible: 3
@@ -66890,8 +66890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -102}
-  m_SizeDelta: {x: 260.7, y: 214.6335}
+  m_AnchoredPosition: {x: -60, y: -4}
+  m_SizeDelta: {x: 317.7, y: 214.6335}
   m_Pivot: {x: 0.50954056, y: 0.4670935}
 --- !u!224 &1260880816938450367
 RectTransform:
@@ -70581,8 +70581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -15}
-  m_SizeDelta: {x: 265.6, y: 214.6335}
+  m_AnchoredPosition: {x: 35, y: 40}
+  m_SizeDelta: {x: 302.3, y: 214.6335}
   m_Pivot: {x: 0.50954056, y: 0.4670935}
 --- !u!224 &7825916934881221975
 RectTransform:
@@ -71064,7 +71064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  skeletonDataAsset: {fileID: 11400000, guid: 3a6f561194ab21d41bd3d3d60d944b58, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 0fcb0eeb9a7f8034d957eac375bed2cf, type: 2}
   additiveMaterial: {fileID: 2100000, guid: 2e8245019faeb8c43b75f9ca3ac8ee34, type: 2}
   multiplyMaterial: {fileID: 2100000, guid: e74a1f8978a7da348a721508d0d58834, type: 2}
   screenMaterial: {fileID: 2100000, guid: bab24c479f34eec45be6ea8595891569, type: 2}
@@ -71073,15 +71073,15 @@ MonoBehaviour:
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
-  startingAnimation: Pop_Up
-  startingLoop: 0
+  startingAnimation: Loop
+  startingLoop: 1
   timeScale: 1
-  freeze: 0
+  freeze: 1
   layoutScaleMode: 1
   referenceSize: {x: 370.2212, y: 376}
   pivotOffset: {x: 0, y: 0}
   referenceScale: 1
-  layoutScale: 0.7041737
+  layoutScale: 0.8581357
   rectTransformSize: {x: 250, y: 250}
   editReferenceRect: 0
   updateWhenInvisible: 3

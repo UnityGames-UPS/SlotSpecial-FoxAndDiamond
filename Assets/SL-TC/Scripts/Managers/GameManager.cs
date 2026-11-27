@@ -341,7 +341,14 @@ public class GameManager : MonoBehaviour
     {
       int scatterCount = CountScatterSymbols(lastResult.resultMatrix);
       if (scatterCount >= 3)
-        spins = scatterCount == 3 ? 7 : (scatterCount == 4 ? 9 : 11);
+      {
+        var spinsByCount = gameConfig?.features?.freeGames?.spinsByCount
+                           ?? gameConfig?.initData?.features?.freeGames?.spinsByCount;
+        if (spinsByCount != null)
+          spins = scatterCount == 3 ? spinsByCount._3 : (scatterCount == 4 ? spinsByCount._4 : spinsByCount._5);
+        else
+          spins = scatterCount == 3 ? 7 : (scatterCount == 4 ? 9 : 11);
+      }
       else if (lastResult.serverSpinsRemaining > 0)
         spins = lastResult.serverSpinsRemaining;
     }

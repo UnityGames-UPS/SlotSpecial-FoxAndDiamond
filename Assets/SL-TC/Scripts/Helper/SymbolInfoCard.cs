@@ -204,7 +204,7 @@ public class SymbolInfoCard : MonoBehaviour
 
             if (multipliers == null || multipliers.Count == 0)
             {
-                var defaults = InitDataConverter.GetTreasureCatsDefaultPayout(symbolId);
+                var defaults = InitDataConverter.GetFoxAndDiamondDefaultPayout(symbolId);
                 if (defaults != null)
                 {
                     matchCounts = new List<int>();

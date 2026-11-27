@@ -1,0 +1,11 @@
+Wild.png
+size:454,374
+filter:Linear,Linear
+pma:true
+Board
+bounds:2,2,370,309
+offsets:1,1,372,311
+rotate:90
+Wild
+bounds:313,15,357,139
+rotate:90

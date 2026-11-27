@@ -1,0 +1,7 @@
+Crown.png
+size:306,270
+filter:Linear,Linear
+pma:true
+Crown
+bounds:2,2,302,266
+offsets:0,10,302,276

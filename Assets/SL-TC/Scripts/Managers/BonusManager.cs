@@ -177,8 +177,8 @@ public class BonusManager : MonoBehaviour
         if (config != null && config.initialChances > 0)
             tempRollChances = config.initialChances;
 
-        if (config?.wheel?.diceThrows != null && config.wheel.diceThrows.Count > 0)
-            tempDiceRolls = config.wheel.diceThrows;
+        if (config?.wheel?.dicePrizes != null && config.wheel.dicePrizes.Count > 0)
+            tempDiceRolls = config.wheel.dicePrizes;
 
         Debug.Log($"[BonusManager] InitFromConfig: initialChances={config?.initialChances}, mapTiles={config?.mapTiles?.Count}, " +
                    $"goldenCoinPrizes={config?.goldenCoinPrizes?.Count}, purpleCoinPrizes={config?.purpleCoinPrizes?.Count}");

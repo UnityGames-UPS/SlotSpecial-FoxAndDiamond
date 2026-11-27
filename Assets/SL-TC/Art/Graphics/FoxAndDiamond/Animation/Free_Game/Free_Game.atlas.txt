@@ -1,0 +1,17 @@
+Free_Game.png
+size:1698,1444
+filter:Linear,Linear
+pma:true
+Cage
+bounds:2,2,1440,1007
+offsets:1,1,1442,1009
+rotate:90
+Circle
+bounds:1011,757,685,685
+offsets:1,1,687,708
+Free
+bounds:1011,650,571,105
+offsets:1,1,573,107
+glow_new
+bounds:1584,657,98,98
+offsets:1,1,100,103

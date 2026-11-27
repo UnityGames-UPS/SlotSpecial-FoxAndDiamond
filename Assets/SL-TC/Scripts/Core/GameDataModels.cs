@@ -56,8 +56,7 @@ public class ServerGameData
   public List<double> bets;
 
   /// <summary>
-  /// Lines per spin — total stake is bet x this. Rich Piggies init does NOT send it, so the
-  /// default stands and matches the 25 fixed paylines.
+  /// Lines per spin — total stake is bet x this. Fox & Diamond sends totalLines = 20.
   /// </summary>
   // public double creditDivisor = 25;
   public double creditDivisor = 0;
@@ -74,7 +73,6 @@ public class ServerFeatures
   public WildSubstitution wildSubstitution;
 
 
-  /// <summary>Minimum symbols on adjacent reels from the leftmost reel for a line to pay.</summary>
   public int minMatchCount;
 
   // Live state — carried so nothing is lost; nothing reads these yet.
@@ -88,7 +86,6 @@ public class ServerFeatures
   public bool treasureHuntActive;
 
   public int freeSpinsRemaining;
-  public ServerMeters meters;
 }
 
 /// <summary>
@@ -125,7 +122,6 @@ public class StringOrArrayConverter : JsonConverter
 
 
 
-/// <summary>The three persistent meters. Blue = free spins, red = wilds, yellow = jackpots.</summary>
 [Serializable]
 public class ServerMeters
 {
@@ -294,14 +290,9 @@ public class ServerPayload
   /// <summary>One entry per winning payline. Empty on a losing spin.</summary>
   public List<ServerLineWin> lineWins;
 
-  /// <summary>Mystery tiles that opened this spin, as [row, col].</summary>
-  public List<ServerMysteryReveal> mysteryReveals;
-
-  /// <summary>Coins stamped on top of a landed cell. Drives the coin flight beat.</summary>
-  public List<ServerCoinOverlay> coinOverlays;
-
-  /// <summary>Populated only when a jackpot tier's meter filled and paid out.</summary>
-  public List<ServerJackpotWin> jackpotWin;
+  // public List<ServerMysteryReveal> mysteryReveals;
+  // public List<ServerCoinOverlay> coinOverlays;
+  // public List<ServerJackpotWin> jackpotWin;
 
   /// <summary>e.g. ["bluePig"] on a trigger spin, ["jackpot_Grand"] on a jackpot award.</summary>
   public List<string> triggeredFeatures;
@@ -314,14 +305,8 @@ public class ServerPayload
   public List<string> activeFeature;
   public int freeSpinsRemaining;
 
-  /// <summary>
-  /// Coins collected per jackpot tier during Yellow free spins, against the tier's space
-  /// count. Present only while activeFeature is "yellow". Parsed; not rendered yet.
-  /// </summary>
-  public Dictionary<string, int> yellowFSCollections;
-
-  /// <summary>Meter values AFTER this spin. The client diffs these to attribute coins.</summary>
-  public ServerMeters meters;
+  // public Dictionary<string, int> yellowFSCollections;
+  // public ServerMeters meters;
   public ServerScatter scatter;
   public TreasureHuntData treasureHunt;
   public bool treasureHuntActive;
@@ -342,17 +327,17 @@ public class ServerScatter
 /// on a Mystery cell stays hidden until that locker opens, one on a plain cell is visible
 /// as soon as the column parks.
 /// </summary>
-[Serializable]
-public class ServerCoinOverlay
-{
+// [Serializable]
+// public class ServerCoinOverlay
+// {
   /// <summary>[row, col] of the cell the coin sits on.</summary>
-  public List<int> position;
+  // public List<int> position;
 
   /// <summary>"BlueCoin" / "YellowCoin" / "RedCoin".</summary>
-  public string coin;
+  // public string coin;
 
   /// <summary>Symbol id, 12-14. Authoritative; <see cref="coin"/> is the readable form.</summary>
-  public int coinId;
+  // public int coinId;
 
   /// <summary>
   /// What this coin DID: "added_to_meter" fed its meter, "triggered" fed the Free Spins
@@ -360,37 +345,38 @@ public class ServerCoinOverlay
   /// coin moves no meter and looks identical to one the server rolled no award for — so
   /// without this field the client has to fall back to guessing (see CoinPlanBuilder).
   /// </summary>
-  public string action;
+  // public string action;
 
   /// <summary>
   /// Blue / Red only: the meter's ABSOLUTE value once this coin has landed. Note the
   /// asymmetry with <see cref="jackpotMultiplierAdded"/>, which is a delta.
   /// </summary>
-  public int? meterValueAfter;
+  // public int? meterValueAfter;
 
   /// <summary>
   /// Yellow only: which jackpot tier this coin fed — "Mega", "Grand", "Major", "Maxi",
   /// "Minor" or "Mini". CASE-SENSITIVE; it keys straight into the meters dictionary.
   /// </summary>
-  public string addedToJackpot;
+  // public string addedToJackpot;
 
   /// <summary>
   /// Yellow only: how much was added to <see cref="addedToJackpot"/>. A DELTA, not the value
   /// after — the client accumulates it onto the tier's current multiplier.
   /// </summary>
-  public double? jackpotMultiplierAdded;
-}
+//   public double? jackpotMultiplierAdded;
+// }
 
-[Serializable]
-public class ServerJackpotWin
-{
-  public int symbolId;
-  public string symbolName;
-  public double winAmount;
+// [Serializable]
+// public class ServerJackpotWin
+// {
+//   public int symbolId;
+//   public string symbolName;
+//   public double winAmount;
 
-  /// <summary>[row, col] of the cell that completed the tier.</summary>
-  public List<int> position;
-}
+//   /// <summary>[row, col] of the cell that completed the tier.</summary>
+//   public List<int> position;
+// }
+
 
 /// <summary>
 /// One winning payline. <see cref="lineIndex"/> is a REAL index into
@@ -425,14 +411,14 @@ public class ServerLineWin
   public object matchedPositions;
 }
 
-[Serializable]
-public class ServerMysteryReveal
-{
-  /// <summary>[row, col] of the Mystery tile that was revealed.</summary>
-  public List<int> position;
-  public int revealedSymbolId;
-  public string revealedSymbolName;
-}
+// [Serializable]
+// public class ServerMysteryReveal
+// {
+//   /// <summary>[row, col] of the Mystery tile that was revealed.</summary>
+//   public List<int> position;
+//   public int revealedSymbolId;
+//   public string revealedSymbolName;
+// }
 
 // ============================================================================
 // Client-Side Spin Request
@@ -484,13 +470,11 @@ public class GameConfig
   public double creditDivisor = 20;  // Credit divisor sent in initData
   public int maxWinMultiplier = 10000;
   public int minWinMultiplier = 10;
-  public int initialFreeSpins = 10;
-  public ExtraSpinsData extraSpinsData; // Keep to avoid compilation error in UI
+  public int initialFreeSpins = 7;
+  // public ExtraSpinsData extraSpinsData;
 
   /// <summary>
-  /// The raw init "features" block — pig meter configuration plus the live meter state.
-  /// Carried verbatim; the meters / jackpot / Mystery presentation that reads it is still
-  /// to be built.
+  /// The raw init "features" block.
   /// </summary>
   public ServerFeatures features;
 }
@@ -541,23 +525,13 @@ public class SpinResult
   public double grandTotalWin;
   public List<WinLine> winLines;
 
-  // Mystery tiles that opened this spin. resultMatrix already holds the REVEALED symbol at
-  // each of these positions — this list only says which cells were behind a locker, so the
-  // client can cover them and play the reveal.
-  public List<ServerMysteryReveal> mysteryReveals;
-
-  // Coins stamped on landed cells this spin, in server order. The order matters: the
-  // client attributes meter movement to coins by walking this list against the meter diff.
-  public List<ServerCoinOverlay> coinOverlays;
-
-  // Meter values AFTER this spin, server-authoritative. Diffed against the client's cached
-  // snapshot to work out which coin moved which meter and by how much.
-  public ServerMeters meters;
-
-  public List<ServerJackpotWin> jackpotWins;
+  // public List<ServerMysteryReveal> mysteryReveals;
+  // public List<ServerCoinOverlay> coinOverlays;
+  // public ServerMeters meters;
+  // public List<ServerJackpotWin> jackpotWins;
   public List<string> triggeredFeatures;
   public List<string> activeFeature;
-  public Dictionary<string, int> yellowFSCollections;
+  // public Dictionary<string, int> yellowFSCollections;
 
   public PlayerData playerData;
   public ServerScatter scatter;
@@ -739,7 +713,7 @@ public static class InitDataConverter
         }
         else
         {
-          var defaultPayout = GetTreasureCatsDefaultPayout(serverSymbol.id);
+          var defaultPayout = GetFoxAndDiamondDefaultPayout(serverSymbol.id);
           if (defaultPayout != null)
           {
             foreach (var entry in defaultPayout)
@@ -782,7 +756,7 @@ public static class InitDataConverter
         wheel = new Wheel
         {
           coinPrizes = new List<int> { 10, 20, 50, 100 },
-          diceThrows = new List<int> { 1, 2, 3, 4, 5, 6 }
+          dicePrizes = new List<int> { 1, 2 }
         }
       };
     }
@@ -825,7 +799,7 @@ public static class InitDataConverter
                   matchCounts = new List<int>(),
                   isWild = sym.name != null && sym.name.ToLower().Contains("wild")
               };
-              var defaultPayout = GetTreasureCatsDefaultPayout(sym.id);
+              var defaultPayout = GetFoxAndDiamondDefaultPayout(sym.id);
               if (defaultPayout != null)
               {
                   foreach (var entry in defaultPayout)
@@ -852,11 +826,11 @@ public static class InitDataConverter
       return config;
   }
 
-  public static List<KeyValuePair<int, double>> GetTreasureCatsDefaultPayout(int symbolId)
+  public static List<KeyValuePair<int, double>> GetFoxAndDiamondDefaultPayout(int symbolId)
   {
     switch (symbolId)
     {
-      case 10: // Necklace
+      case 3: // Orange fox
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 500),
@@ -864,7 +838,7 @@ public static class InitDataConverter
           new KeyValuePair<int, double>(3, 50),
           new KeyValuePair<int, double>(2, 5)
         };
-      case 11: // Gem Ring
+      case 4: // Purple fox
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 400),
@@ -872,7 +846,7 @@ public static class InitDataConverter
           new KeyValuePair<int, double>(3, 40),
           new KeyValuePair<int, double>(2, 4)
         };
-      case 8: // Crown
+      case 5: // Blue fox
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 300),
@@ -880,7 +854,7 @@ public static class InitDataConverter
           new KeyValuePair<int, double>(3, 30),
           new KeyValuePair<int, double>(2, 3)
         };
-      case 9: // Pocket Watch
+      case 6: // Green fox
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 200),
@@ -888,17 +862,17 @@ public static class InitDataConverter
           new KeyValuePair<int, double>(3, 20),
           new KeyValuePair<int, double>(2, 2)
         };
-      case 7: // Cat Portrait / Painting
+      case 7: // fox Portrait
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 100),
           new KeyValuePair<int, double>(4, 50),
           new KeyValuePair<int, double>(3, 10)
         };
-      case 3: // red cat
-      case 4: // Purple Cat
-      case 5: // Blue Cat
-      case 6: // Green Cat
+      case 8: // Crown
+      case 9: // Pocket Watch
+      case 10: // Necklace
+      case 11: // Gem Ring
         return new List<KeyValuePair<int, double>>
         {
           new KeyValuePair<int, double>(5, 30),
@@ -926,12 +900,6 @@ public static class InitDataConverter
     return 5;
   }
 
-  /// <summary>
-  /// Rows: one past the highest row index any payline touches — 3 for Rich Piggies, whose
-  /// lines only ever name rows 0/1/2. Replaces the old
-  /// "totalLines == 243 ? 3 : 1024 ? 4 : 3" guess, which returned 3 for a 25-line game
-  /// only by falling through to its default branch.
-  /// </summary>
   private static int DeriveRowCount(ServerGameData gameData)
   {
     int maxRow = -1;
@@ -986,21 +954,15 @@ public static class InitDataConverter
       grandTotalWin = winAmountVal,
       winLines = ConvertLineWins(payload?.lineWins, gameConfig),
 
-      // Carried verbatim — positions are [row, col] and index the SAME grid as resultMatrix,
-      // which already contains the revealed symbol at each of them.
-      mysteryReveals = payload?.mysteryReveals,
-      coinOverlays = payload?.coinOverlays,
-
-      // Meter state and feature signalling. meters is what the coin flight beat diffs
-      // against its cached snapshot to decide which meter each coin moved.
-      meters = payload?.meters,
-      jackpotWins = payload?.jackpotWin,
+      // mysteryReveals = payload?.mysteryReveals,
+      // coinOverlays = payload?.coinOverlays,
+      // meters = payload?.meters,
+      // jackpotWins = payload?.jackpotWin,
       treasureHuntData = payload?.treasureHunt ?? serverResponse.treasureHunt,
       treasureHuntActive = (payload != null && (payload.treasureHuntActive || payload.bonusTriggered || payload.isBonusTriggered))
           || (serverResponse.treasureHunt != null && serverResponse.treasureHunt.triggered),
       triggeredFeatures = payload?.triggeredFeatures,
       activeFeature = payload?.activeFeature,
-      yellowFSCollections = payload?.yellowFSCollections,
 
       playerData = new PlayerData
       {

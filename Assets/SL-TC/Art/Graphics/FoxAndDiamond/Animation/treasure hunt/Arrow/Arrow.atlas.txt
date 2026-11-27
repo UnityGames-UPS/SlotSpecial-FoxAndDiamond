@@ -1,0 +1,13 @@
+Arrow.png
+size:490,336
+filter:Linear,Linear
+pma:true
+Arrow
+bounds:2,2,332,342
+offsets:1,1,334,344
+rotate:90
+Swipe
+bounds:346,117,40,72
+star
+bounds:346,191,142,143
+offsets:9,8,159,159

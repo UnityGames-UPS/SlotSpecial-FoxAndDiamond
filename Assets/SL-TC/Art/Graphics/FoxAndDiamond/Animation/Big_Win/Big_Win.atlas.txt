@@ -1,0 +1,17 @@
+Big_Win.png
+size:1207,1115
+filter:Linear,Linear
+pma:true
+Big
+bounds:924,2,525,280
+offsets:1,1,527,282
+rotate:90
+Button
+bounds:2,191,920,221
+offsets:1,1,922,223
+Fox
+bounds:2,414,904,699
+Win
+bounds:908,529,584,297
+offsets:1,1,586,299
+rotate:90

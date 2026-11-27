@@ -1,0 +1,9 @@
+Ring.png
+size:502,234
+filter:Linear,Linear
+pma:true
+Daimond
+bounds:307,6,226,193
+rotate:90
+Ring
+bounds:2,2,303,230

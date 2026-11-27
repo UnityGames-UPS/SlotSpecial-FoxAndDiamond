@@ -10,6 +10,7 @@ public class Root
     public string id { get; set; }
     public GameData gameData { get; set; }
     public Features features { get; set; }
+    public FeatureGameState state { get; set; }
     public UiData uiData { get; set; }
     public Player player { get; set; }
     public JackpotData jackpotData { get; set; }
@@ -30,6 +31,17 @@ public class Features
     public FreeGames freeGames { get; set; }
     public TreasureHunt treasureHunt { get; set; }
     public WildSubstitution wildSubstitution { get; set; }
+    public FeatureGameState gameState { get; set; }
+}
+
+[Serializable]
+public class FeatureGameState
+{
+    public int freeSpinsRemaining { get; set; }
+    public double totalFreeSpinsWin { get; set; }
+    public bool isFreeGame { get; set; }
+    public List<object> stickyWilds { get; set; }
+    public bool treasureHuntActive { get; set; }
 }
 
 [Serializable]
@@ -84,8 +96,11 @@ public class TreasureHunt
 public class Wheel
 {
     public List<int> coinPrizes { get; set; }
-    public List<int> speedBoostSteps { get; set; }
-    public List<int> diceThrows { get; set; }
+    public List<int> dicePrizes { get; set; }
+    public Dictionary<string, double> diceWeights { get; set; }
+    public Dictionary<string, double> prizeWeights { get; set; }
+    // public List<int> speedBoostSteps { get; set; }
+    // public List<int> diceThrows { get; set; }
 }
 
 [Serializable]
